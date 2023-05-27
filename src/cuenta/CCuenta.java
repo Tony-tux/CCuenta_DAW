@@ -1,58 +1,66 @@
 package cuenta;
-
+/**
+ * 
+ * @author antonio
+ * Programa de creacion y manejo de una cuenta corriente.
+ */
 public class CCuenta {
 
     /**
-     * @return the nombre
+     * @return Deculeve el nombre del usuario de la cuenta.
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * @param nombre the nombre to set
+     * @param nombre 
+     * Recibe el nombre del usuario de la cuenta corriente.
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * @return the cuenta
+     * @return Devuelve el número de la cuenta corriente.
      */
     public String getCuenta() {
         return cuenta;
     }
 
     /**
-     * @param cuenta the cuenta to set
+     * @param cuenta
+     * Recibe el número de cuenta a buscar.
      */
     public void setCuenta(String cuenta) {
         this.cuenta = cuenta;
     }
 
     /**
-     * @return the saldo
+     * @return Devuelve cuanto saldo tiene la cuenta.
      */
     public double getSaldo() {
         return saldo;
     }
 
     /**
-     * @param saldo the saldo to set
+     * @param saldo
+     * Recibe cuanto saldo tiene la cuenta corriente.
      */
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
     /**
-     * @return the tipoInterés
+     * @return Devuelve el tipo de interés al que está la cuenta corriente.
      */
     public double getTipoInterés() {
         return tipoInterés;
     }
 
     /**
-     * @param tipoInterés the tipoInterés to set
+     * @param tipoInterés
+     * Recibe el tipo de interes al que tiene que estar la cuenta corriente.
      */
     public void setTipoInterés(double tipoInterés) {
         this.tipoInterés = tipoInterés;
@@ -67,6 +75,18 @@ public class CCuenta {
     public CCuenta()
     {
     }
+    /**
+     * 
+     * @param nom
+     * Nombre del usuario de la cuenta corriente
+     * @param cue
+     * Número de la cuenta corriente
+     * @param sal
+     * Monto del saldo de la cuenta corriente
+     * @param tipo
+     * Parametro colocado pero sin uso, tendria que ser el tipo de interes. TODO.
+     * 
+     */
 
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
@@ -79,6 +99,13 @@ public class CCuenta {
     {
         return getSaldo();
     }
+    /**
+     * 
+     * @param cantidad
+     * Cantidad de dinero que se va a ingresar
+     * @throws Exception 
+     * Aviso de que se está ingresando con cantidad negativa.
+     */
 
     public void ingresar(double cantidad) throws Exception
     {
@@ -86,6 +113,13 @@ public class CCuenta {
             throw new Exception("No se puede ingresar una cantidad negativa");
         setSaldo(getSaldo() + cantidad);
     }
+    /**
+     * 
+     * @param cantidad
+     * Cantidad de dinero que se va a retirar.
+     * @throws Exception 
+     * Aviso de que se está intentando retirar una cantidad negativa.
+     */
 
     public void retirar(double cantidad) throws Exception
     {
